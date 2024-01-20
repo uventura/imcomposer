@@ -30,6 +30,5 @@ cc_library(
     deps = [
         ":imgui_src",
     ],
-    include_prefix = "imgui",
     visibility = ["//visibility:public"],
 )
