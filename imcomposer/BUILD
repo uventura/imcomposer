@@ -1,9 +1,4 @@
-cc_binary(
+alias(
     name = "imcomposer",
-    srcs = [
-        "main.cpp",
-    ],
-    deps = [
-        "//imcomposer/imcomposer:imcomposer_ui",
-    ]
+    actual = "//imcomposer/main",
 )

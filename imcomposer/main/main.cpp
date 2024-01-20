@@ -1,4 +1,4 @@
-#include "imcomposer/imcomposer/imcomposer_ui.hpp"
+#include "imcomposer/main/imcomposer.hpp"
 
 int main()
 {

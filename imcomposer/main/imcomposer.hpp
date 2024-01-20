@@ -1,8 +1,8 @@
 #ifndef IMCOMPOSER_UI
 #define IMCOMPOSER_UI
 
-#include "imcomposer/lib/core/window/window.hpp"
-#include "imcomposer/lib/core/imgui/imgui.hpp"
+#include "imcomposer/core/window/window.hpp"
+#include "imcomposer/core/imgui/imgui.hpp"
 
 namespace ImComposer
 {

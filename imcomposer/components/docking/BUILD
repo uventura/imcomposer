@@ -7,7 +7,7 @@ cc_library(
         "docking.hpp"
     ],
     deps = [
-        "//imcomposer/lib/core/imgui",
+        "//imcomposer/core/imgui",
     ],
     visibility = ["//imcomposer:__subpackages__"],
 )

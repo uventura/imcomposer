@@ -1,6 +1,6 @@
-#include "imcomposer/imcomposer/imcomposer_ui.hpp"
-#include "imcomposer/lib/core/imgui/imgui.hpp"
-#include "imcomposer/lib/components/docking/docking.hpp"
+#include "imcomposer/main/imcomposer.hpp"
+#include "imcomposer/core/imgui/imgui.hpp"
+#include "imcomposer/components/docking/docking.hpp"
 
 void ImComposer::ImComposerUi::render()
 {
