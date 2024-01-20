@@ -1,3 +1,6 @@
+#ifndef IMCOMPOSER_UI
+#define IMCOMPOSER_UI
+
 #include "imcomposer/lib/core/window/window.hpp"
 
 namespace ImComposer
@@ -11,3 +14,5 @@ namespace ImComposer
             void render();
     };
 }
+
+#endif
