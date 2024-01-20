@@ -1,5 +1,5 @@
-#ifndef IMCOMPOSER_WINDOW
-#define IMCOMPOSER_WINDOW
+#ifndef IMCOMPOSER_CORE_WINDOW
+#define IMCOMPOSER_CORE_WINDOW
 
 #include <string>
 
@@ -7,6 +7,8 @@
 #include <GLFW/glfw3.h>
 
 namespace ImComposer
+{
+namespace Core
 {
     class Window
     {
@@ -32,6 +34,7 @@ namespace ImComposer
 
             inline GLFWwindow* getWindow(){return window_;};
     };
+}
 }
 
 #endif

@@ -10,5 +10,5 @@ cc_library(
         "//third_party/glad",
         "//third_party/glfw"
     ],
-    visibility = ["//imcomposer:__subpackages__", ],
+    visibility = ["//imcomposer:__subpackages__",],
 )

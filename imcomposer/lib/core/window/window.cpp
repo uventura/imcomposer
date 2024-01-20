@@ -6,7 +6,7 @@
 
 #include <iostream>
 
-ImComposer::Window::Window()
+ImComposer::Core::Window::Window()
 {
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, glfwMajorVersion_);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, glfwMinorVersion_);
@@ -33,26 +33,26 @@ ImComposer::Window::Window()
     glfwSwapInterval(2);
 }
 
-ImComposer::Window::~Window()
+ImComposer::Core::Window::~Window()
 {
     glfwDestroyWindow(window_);
     glfwTerminate();
 }
 
-void ImComposer::Window::clear()
+void ImComposer::Core::Window::clear()
 {
     glClear(GL_COLOR_BUFFER_BIT);
     glClearColor(backgroundColor_[0],backgroundColor_[1],backgroundColor_[2],backgroundColor_[3]);
 }
 
-void ImComposer::Window::renderUpdate()
+void ImComposer::Core::Window::renderUpdate()
 {
     int display_w, display_h;
     glfwGetFramebufferSize(window_, &display_w, &display_h);
     glViewport(0, 0, display_w, display_h);
 }
 
-void ImComposer::Window::bufferUpdate()
+void ImComposer::Core::Window::bufferUpdate()
 {
     glfwPollEvents();
     glfwSwapBuffers(window_);
