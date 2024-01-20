@@ -4,6 +4,6 @@ cc_binary(
         "main.cpp",
     ],
     deps = [
-        "//imcomposer/lib/core/window",
+        "//imcomposer/imcomposer",
     ]
 )

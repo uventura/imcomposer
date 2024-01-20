@@ -1,16 +1,7 @@
-#include "imcomposer/lib/core/window/window.h"
+#include "imcomposer/imcomposer/imcomposer.hpp"
 
 int main()
 {
-    ImComposer::Window window;
-
-    while(!window.shouldClose())
-    {
-        window.clear();
-
-        // Something
-
-        window.bufferUpdate();
-        window.renderUpdate();
-    }
+    ImComposer::ImComposer imcomposer;
+    imcomposer.render();
 }
