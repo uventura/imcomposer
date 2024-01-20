@@ -4,11 +4,11 @@ cc_library(
         "window.cpp",
     ],
     hdrs = [
-        "window.h",
+        "window.hpp",
     ],
     deps = [
         "//third_party/glad",
         "//third_party/glfw"
     ],
-    visibility = ["//imcomposer:__subpackages__"],
+    visibility = ["//imcomposer:__subpackages__", ],
 )

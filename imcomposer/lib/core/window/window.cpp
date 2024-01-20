@@ -1,5 +1,5 @@
 
-#include "imcomposer/lib/core/window/window.h"
+#include "imcomposer/lib/core/window/window.hpp"
 
 #include <glad/gl.h>
 #include <GLFW/glfw3.h>
