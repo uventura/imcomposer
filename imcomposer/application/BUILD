@@ -16,7 +16,7 @@ cc_library(
 )
 
 cc_binary(
-    name = "main",
+    name = "application",
     deps = [":imcomposer"],
     srcs = [
         "main.cpp"
