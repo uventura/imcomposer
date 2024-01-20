@@ -10,5 +10,6 @@ cc_library(
     ],
     deps = [
         "//imcomposer/lib/core/window",
+        "//imcomposer/lib/core/imgui"
     ]
 )
