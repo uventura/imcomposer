@@ -1,5 +1,6 @@
 #include "imcomposer/imcomposer/imcomposer_ui.hpp"
 #include "imcomposer/lib/core/imgui/imgui.hpp"
+#include "imcomposer/lib/components/docking/docking.hpp"
 
 void ImComposer::ImComposerUi::render()
 {
@@ -11,8 +12,11 @@ void ImComposer::ImComposerUi::render()
     while(!window_.shouldClose())
     {
         clear();
+        ImComposer::Component::Docking::begin();
 
         ImGui::ShowDemoWindow(&show_demo_window);
+
+        ImComposer::Component::Docking::end();
 
         update();
     }
