@@ -1,12 +1,12 @@
 package(default_visibility = ["//imcomposer:__subpackages__"])
 
 cc_library(
-    name = "imcomposer",
+    name = "imcomposer_ui",
     srcs = [
-        "imcomposer.cpp",
+        "imcomposer_ui.cpp",
     ],
     hdrs = [
-        "imcomposer.hpp"
+        "imcomposer_ui.hpp"
     ],
     deps = [
         "//imcomposer/lib/core/window",

@@ -1,6 +1,6 @@
-#include "imcomposer/imcomposer/imcomposer.hpp"
+#include "imcomposer/imcomposer/imcomposer_ui.hpp"
 
-void ImComposer::ImComposer::render()
+void ImComposer::ImComposerUi::render()
 {
     while(!window_.shouldClose())
     {

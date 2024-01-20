@@ -1,7 +1,7 @@
-#include "imcomposer/imcomposer/imcomposer.hpp"
+#include "imcomposer/imcomposer/imcomposer_ui.hpp"
 
 int main()
 {
-    ImComposer::ImComposer imcomposer;
+    ImComposer::ImComposerUi imcomposer;
     imcomposer.render();
 }

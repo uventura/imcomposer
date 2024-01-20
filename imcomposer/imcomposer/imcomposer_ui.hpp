@@ -2,10 +2,10 @@
 
 namespace ImComposer
 {
-    class ImComposer
+    class ImComposerUi
     {
         private:
-            ImComposer::Window window_;
+            ImComposer::Core::Window window_;
 
         public:
             void render();
