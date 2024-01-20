@@ -9,16 +9,26 @@ cc_library(
     ],
     visibility = ["//visibility:public"],
     strip_include_prefix = "include",
-    linkopts = [
-        # "-ldl",
-        "-lpthread",
-        "-fpic",
-        "-fPIC",
-        "-m64"
-    ],
-    copts = [
-        "-fpic",
-        "-fPIC",
-        "-m64"
-    ],
+    linkopts = select({
+        "//conditions:default": [],
+        "@bazel_tools//src/conditions:windows": [],
+        "@bazel_tools//src/conditions:linux": [
+            # "-ldl",
+            # "-lpthread",
+            "-fpic",
+            "-fPIC",
+            "-m64"
+        ],
+    }),
+    copts = select({
+        "//conditions:default": [],
+        "@bazel_tools//src/conditions:windows": [],
+        "@bazel_tools//src/conditions:linux": [
+            # "-ldl",
+            # "-lpthread",
+            "-fpic",
+            "-fPIC",
+            "-m64"
+        ],
+    }),
 )

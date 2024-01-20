@@ -84,6 +84,14 @@ cc_library(
 		"@bazel_tools//src/conditions:windows": WIN32_DEFINES,
 		"@bazel_tools//src/conditions:linux_x86_64": LINUX_DEFINES,
 	}),
+    deps = [
+        "@//third_party/glad",
+    ],
+    linkopts = select({
+        "//conditions:default": [],
+        "@bazel_tools//src/conditions:windows": ["-lGdi32"],
+        "@bazel_tools//src/conditions:linux": [],
+    }),
 )
 
 cc_library(
@@ -96,7 +104,10 @@ cc_library(
 		"@bazel_tools//src/conditions:windows": WIN32_LINKOPTS,
 		"@bazel_tools//src/conditions:linux_x86_64": LINUX_LINKOPTS,
 	}),
-    deps = [":glfw_src"],
+    deps = [
+        ":glfw_src",
+        "@//third_party/glad",
+    ],
     strip_include_prefix = "include",
     visibility = ["//visibility:public"],
 )
