@@ -7,7 +7,12 @@ cc_library(
         "imgui.hpp",
     ],
     deps = [
-        "//third_party/imgui"
+        "//third_party/imgui",
+        "//third_party/material_design_icon",
+        "//imcomposer/utils:bazel",
+    ],
+    data = [
+        "//third_party/material_design_icon:material_design_icon_font",
     ],
     visibility = ["//imcomposer:__subpackages__",],
 )

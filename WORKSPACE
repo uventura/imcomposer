@@ -1,3 +1,5 @@
+workspace(name = "imcomposer")
+
 load("//third_party:dependencies.bzl", "dependencies")
 
 dependencies()
