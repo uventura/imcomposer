@@ -1,5 +1,4 @@
 #include "imcomposer/core/imgui/imgui.hpp"
-#include "imcomposer/utils/bazel.h"
 
 #include <glad/gl.h>
 #include <GLFW/glfw3.h>
@@ -9,11 +8,8 @@
 #include "backends/imgui_impl_glfw.h"
 #include "backends/imgui_impl_opengl3.h"
 
-#include "data/fonts/fonts.h"
-
-ImComposer::Core::Imgui::Imgui(GLFWwindow* window, std::string applicationPath)
+ImComposer::Core::Imgui::Imgui(GLFWwindow* window)
 {
-    applicationPath_ = applicationPath;
     window_ = window;
 
     // Setup Dear ImGui context
@@ -41,7 +37,7 @@ ImComposer::Core::Imgui::Imgui(GLFWwindow* window, std::string applicationPath)
     ImGui_ImplGlfw_InitForOpenGL(window, true);
     ImGui_ImplOpenGL3_Init(glsl_version);
 
-    loadFonts();
+    font_.load();
 }
 
 ImComposer::Core::Imgui::~Imgui()
@@ -77,28 +73,4 @@ void ImComposer::Core::Imgui::update()
         ImGui::RenderPlatformWindowsDefault();
         glfwMakeContextCurrent(backup_current_context);
     }
-}
-
-void ImComposer::Core::Imgui::loadFonts()
-{
-    // Configuring Font
-    ImFontConfig config;
-    config.MergeMode = true;
-    config.GlyphOffset = { 0.f, 5.f };
-
-    std::map<std::string, std::string> loadedFonts; // Used for readbility purposes
-    loadedFonts["robotoMedium"] = ImComposer::Utils::Bazel::getFullPath(applicationPath_, ROBOTO_REGULAR);
-    loadedFonts["codiIcon"] = ImComposer::Utils::Bazel::getFullPath(applicationPath_, CODI_ICONS_VSCODE);
-
-	auto& io = ImGui::GetIO();
-    // ImFont* font = io.Fonts->AddFontDefault();
-    io.Fonts->AddFontFromFileTTF(loadedFonts["robotoMedium"].c_str(), 20.0f);
-
-    // Codi Icon
-    static const ImWchar icons_ranges_cod[] = { ICON_MIN_CI, ICON_MAX_16_CI, 0 };
-    fonts_["codiIcon"] = io.Fonts->AddFontFromFileTTF(loadedFonts["codiIcon"].c_str(), 30.0f, &config, icons_ranges_cod);
-
-    // Merging Fonts
-    io.Fonts->Build();
-    config.MergeMode = false;
 }
