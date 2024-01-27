@@ -1,5 +1,5 @@
 filegroup(
-    name = "material_design_icon_font",
-    srcs = glob(["*.ttf", "*.otf"]),
+    name = "fonts",
+    srcs = glob(["*.ttf"]),
     visibility = ["//visibility:public"],
 )

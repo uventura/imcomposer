@@ -1,5 +1,5 @@
 cc_library(
-    name = "material_design_icon",
+    name = "includes",
     srcs = glob(["*.h"]),
-    visibility = ["//visibility:public"],
+    visibility = ["//data/fonts:__subpackages__"],
 )
