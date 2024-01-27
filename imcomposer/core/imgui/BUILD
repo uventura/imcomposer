@@ -7,7 +7,10 @@ cc_library(
         "imgui.hpp",
     ],
     deps = [
-        "//third_party/imgui"
+        "//third_party/imgui",
+        "//data/fonts",
+        "//imcomposer/utils:bazel",
     ],
+    data = ["//data/fonts/ttf:fonts"],
     visibility = ["//imcomposer:__subpackages__",],
 )

@@ -1,7 +1,8 @@
-#include "imcomposer/main/imcomposer.hpp"
+#include "imcomposer/application/imcomposer.hpp"
 
-int main()
+int main(int argc, char** argv)
 {
-    ImComposer::ImComposerUi imcomposer;
+    std::string applicationPath = argv[0];
+    ImComposer::ImComposerUi imcomposer(applicationPath);
     imcomposer.render();
 }
