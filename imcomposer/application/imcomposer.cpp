@@ -36,7 +36,7 @@ void ImComposer::ImComposerUi::render()
         // ImGui::Button(ICON_FA_FILE_PDF);
         // ImGui::Button(ICON_FK_HEART, ImVec2(40, 40));
 
-        ImGui::Button(ICON_CI_FILE_TEXT, ImVec2(60, 60));
+        ImGui::Button(ICON_CI_HEART, ImVec2(60, 60));
         ImGui::End();
 
         ImComposer::Component::Docking::end();
