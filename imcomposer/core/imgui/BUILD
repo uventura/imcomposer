@@ -10,7 +10,7 @@ cc_library(
         "//third_party/imgui",
         "//data/fonts",
         "//imcomposer/utils:bazel",
+        "//imcomposer/core/fonts:font_loader",
     ],
-    data = ["//data/fonts/ttf:fonts"],
     visibility = ["//imcomposer:__subpackages__",],
 )

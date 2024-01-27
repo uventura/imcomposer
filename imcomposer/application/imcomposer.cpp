@@ -7,24 +7,23 @@
 #include <iostream>
 #include <string>
 
-ImComposer::ImComposerUi::ImComposerUi(std::string applicationPath)
-{
-    applicationPath_ = applicationPath;
-}
+#include "imcomposer/application/imcomposer_environment.h"
 
 void ImComposer::ImComposerUi::render()
 {
-    ImComposer::Core::Imgui imgui(window_.getWindow(), applicationPath_);
+    ImComposer::Core::Imgui imgui(window_.getWindow());
     imgui_ = &imgui;
 
-    bool show_demo_window = true;
+    // bool show_demo_window = true;
 
     while(!window_.shouldClose())
     {
         clear();
         ImComposer::Component::Docking::begin();
 
-        ImGui::ShowDemoWindow(&show_demo_window);
+        toolbar_.begin();
+
+        // ImGui::ShowDemoWindow(&show_demo_window);
 
         ImGui::Begin("Something");
         ImGui::Button(ICON_CI_HEART, ImVec2(60, 60));

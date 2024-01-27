@@ -11,6 +11,8 @@
 #include "backends/imgui_impl_glfw.h"
 #include "backends/imgui_impl_opengl3.h"
 
+#include "imcomposer/core/fonts/font_loader.h"
+
 namespace ImComposer
 {
 namespace Core
@@ -18,22 +20,17 @@ namespace Core
     class Imgui
     {
         private:
-            std::string applicationPath_;
-
             GLFWwindow* window_;
             ImGuiIO* io;
-            std::map<std::string, ImFont*> fonts_;
+            ImComposer::Core::FontLoader font_;
 
-            void loadFonts();
         public:
-            Imgui(GLFWwindow* window, std::string applicationPath);
+            Imgui(GLFWwindow* window);
             ~Imgui();
 
             void newFrame();
             void render();
             void update();
-
-            inline ImFont* getFont(std::string font){return fonts_[font];};
     };
 }
 }
