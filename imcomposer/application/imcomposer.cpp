@@ -2,11 +2,7 @@
 #include "imcomposer/core/imgui/imgui.hpp"
 #include "imcomposer/components/docking/docking.hpp"
 
-#include "third_party/material_design_icon/material_design_icon.h"
-#include "third_party/material_design_icon/font_awesome_design.h"
-#include "third_party/material_design_icon/IconsCodicons.h"
-#include "third_party/material_design_icon/IconsLucide.h"
-#include "third_party/material_design_icon/IconsForkAwesome.h"
+#include "data/fonts/fonts.h"
 
 #include <iostream>
 #include <string>
@@ -31,11 +27,6 @@ void ImComposer::ImComposerUi::render()
         ImGui::ShowDemoWindow(&show_demo_window);
 
         ImGui::Begin("Something");
-        // ImGui::Button(ICON_FA_FILE);
-        // ImGui::Button(ICON_FA_FILE_IMPORT);
-        // ImGui::Button(ICON_FA_FILE_PDF);
-        // ImGui::Button(ICON_FK_HEART, ImVec2(40, 40));
-
         ImGui::Button(ICON_CI_HEART, ImVec2(60, 60));
         ImGui::End();
 

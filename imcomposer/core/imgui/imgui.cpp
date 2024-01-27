@@ -9,19 +9,7 @@
 #include "backends/imgui_impl_glfw.h"
 #include "backends/imgui_impl_opengl3.h"
 
-#include "third_party/material_design_icon/material_design_icon.h"
-#include "third_party/material_design_icon/font_awesome_design.h"
-#include "third_party/material_design_icon/IconsCodicons.h"
-#include "third_party/material_design_icon/IconsLucide.h"
-#include "third_party/material_design_icon/IconsForkAwesome.h"
-
-#define ROBOTO_REGULAR "imcomposer/third_party/material_design_icon/Roboto-Regular.ttf"
-#define FA_REGULAR_400 "imcomposer/third_party/material_design_icon/fa-regular-400.ttf"
-#define FA_REGULAR_900 "imcomposer/third_party/material_design_icon/fa-solid-900.ttf"
-#define MATERIAL_ICON_REGULAR "imcomposer/third_party/material_design_icon/MaterialIcons-Regular.ttf"
-#define CODI_ICONS_VSCODE "imcomposer/third_party/material_design_icon/codicon.ttf"
-#define LUCIDE_ICONS "imcomposer/third_party/material_design_icon/lucide.ttf"
-#define FORK_ICONS "imcomposer/third_party/material_design_icon/forkawesome-webfont.ttf"
+#include "data/fonts/fonts.h"
 
 ImComposer::Core::Imgui::Imgui(GLFWwindow* window, std::string applicationPath)
 {
@@ -93,35 +81,24 @@ void ImComposer::Core::Imgui::update()
 
 void ImComposer::Core::Imgui::loadFonts()
 {
-    std::map<std::string, std::string> loadedFonts;
+    // Configuring Font
+    ImFontConfig config;
+    config.MergeMode = true;
+    config.GlyphOffset = { 0.f, 5.f };
 
+    std::map<std::string, std::string> loadedFonts; // Used for readbility purposes
     loadedFonts["robotoMedium"] = ImComposer::Utils::Bazel::getFullPath(applicationPath_, ROBOTO_REGULAR);
-    loadedFonts["faRegular400"] = ImComposer::Utils::Bazel::getFullPath(applicationPath_, FA_REGULAR_400);
-    loadedFonts["faRegular900"] = ImComposer::Utils::Bazel::getFullPath(applicationPath_, FA_REGULAR_900);
-    loadedFonts["materialIcon"] = ImComposer::Utils::Bazel::getFullPath(applicationPath_, MATERIAL_ICON_REGULAR);
     loadedFonts["codiIcon"] = ImComposer::Utils::Bazel::getFullPath(applicationPath_, CODI_ICONS_VSCODE);
-    loadedFonts["lucide"] = ImComposer::Utils::Bazel::getFullPath(applicationPath_, LUCIDE_ICONS);
-    loadedFonts["fork"] = ImComposer::Utils::Bazel::getFullPath(applicationPath_, FORK_ICONS);
 
 	auto& io = ImGui::GetIO();
     // ImFont* font = io.Fonts->AddFontDefault();
     io.Fonts->AddFontFromFileTTF(loadedFonts["robotoMedium"].c_str(), 20.0f);
 
-    static const ImWchar icons_ranges_fa[] = { ICON_MIN_FA, ICON_MAX_16_FA, 0 }; // Will not be copied by AddFont* so keep in scope.
-    static const ImWchar icons_ranges[] = { ICON_MIN_MD, ICON_MAX_16_MD, 0 }; // Will not be copied by AddFont* so keep in scope.
-    static const ImWchar icons_ranges_cod[] = { ICON_MIN_CI, ICON_MAX_16_CI, 0 }; // Will not be copied by AddFont* so keep in scope.
-    static const ImWchar icons_ranges_lucide[] = { ICON_MIN_LC, ICON_MAX_16_LC, 0 }; // Will not be copied by AddFont* so keep in scope.
-    static const ImWchar icons_ranges_fork[] = { ICON_MIN_FK, ICON_MAX_16_FK, 0 }; // Will not be copied by AddFont* so keep in scope.
-
-    ImFontConfig config;
-    config.MergeMode = true;
-    config.GlyphOffset = { 0.f, 5.f };
-    // config.PixelSnapH = true;
-    // fonts_["faRegular400"] = io.Fonts->AddFontFromFileTTF(loadedFonts["faRegular400"].c_str(), 15.0f, &config, icons_ranges_fa);
-    // fonts_["faRegular900"] = io.Fonts->AddFontFromFileTTF(loadedFonts["faRegular900"].c_str(), 15.0f, &config, icons_ranges_fa);
-    // fonts_["materialIcon"] = io.Fonts->AddFontFromFileTTF(loadedFonts["materialIcon"].c_str(), 18.0f, &config, icons_ranges);
+    // Codi Icon
+    static const ImWchar icons_ranges_cod[] = { ICON_MIN_CI, ICON_MAX_16_CI, 0 };
     fonts_["codiIcon"] = io.Fonts->AddFontFromFileTTF(loadedFonts["codiIcon"].c_str(), 30.0f, &config, icons_ranges_cod);
-    // fonts_["lucide"] = io.Fonts->AddFontFromFileTTF(loadedFonts["lucide"].c_str(), 50.0f, &config, icons_ranges_lucide);
-    // fonts_["fork"] = io.Fonts->AddFontFromFileTTF(loadedFonts["fork"].c_str(), 60.0f, &config, icons_ranges_fork);
+
+    // Merging Fonts
     io.Fonts->Build();
+    config.MergeMode = false;
 }

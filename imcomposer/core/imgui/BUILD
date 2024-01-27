@@ -8,11 +8,9 @@ cc_library(
     ],
     deps = [
         "//third_party/imgui",
-        "//third_party/material_design_icon",
+        "//data/fonts",
         "//imcomposer/utils:bazel",
     ],
-    data = [
-        "//third_party/material_design_icon:material_design_icon_font",
-    ],
+    data = ["//data/fonts/ttf:fonts"],
     visibility = ["//imcomposer:__subpackages__",],
 )
