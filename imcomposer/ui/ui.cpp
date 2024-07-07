@@ -9,14 +9,5 @@ void ImComposer::UI::MainUi::draw() {
 
     toolbar_.draw();
     canvas_.draw();
-    // ImGui::ShowDemoWindow(&show_demo_window);
-
-    ImGui::PushFont(ImComposer::Core::FontLoader::fonts[IMCOMPOSER_ICON_FONT_1]);
-        ImGui::Text(ICON_CI_TOOLS);
-
-    ImGui::Begin("Something");
-    ImGui::Button(ICON_CI_HEART, ImVec2(60, 60));
-    ImGui::End();
-
-    ImGui::PopFont();
+    properties_.draw();
 }

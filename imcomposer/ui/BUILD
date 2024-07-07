@@ -6,6 +6,7 @@ cc_library(
         "//imcomposer/ui/menubar",
         "//imcomposer/ui/toolbar",
         "//imcomposer/ui/canvas",
+        "//imcomposer/ui/properties",
     ],
     visibility = ["//imcomposer:__subpackages__"],
 )
