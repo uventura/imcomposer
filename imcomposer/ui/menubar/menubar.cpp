@@ -1,21 +1,21 @@
 #include "imcomposer/core/imgui/imgui.h"
-#include "imcomposer/ui/toolbar/toolbar.h"
+#include "imcomposer/ui/menubar/menubar.h"
 
 #include "imcomposer/core/fonts/fonts.h"
 
 #include <iostream>
 
-ImComposer::UI::Toolbar::Toolbar()
+ImComposer::UI::Menubar::Menubar()
 {
     state_ = true;
 }
 
-void ImComposer::UI::Toolbar::setIconFont(ImFont* font)
+void ImComposer::UI::Menubar::setIconFont(ImFont* font)
 {
     iconFont_ = font;
 }
 
-void ImComposer::UI::Toolbar::begin()
+void ImComposer::UI::Menubar::begin()
 {
     if (ImGui::BeginMenuBar())
     {

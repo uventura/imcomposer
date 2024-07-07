@@ -1,6 +1,6 @@
 #pragma once
 
-#include "imcomposer/ui/toolbar/toolbar.h"
+#include "imcomposer/ui/menubar/menubar.h"
 
 namespace ImComposer
 {
@@ -13,7 +13,7 @@ namespace UI
             void draw();
         private:
             bool state_;
-            Toolbar toolbar_;
+            Menubar menubar_;
     };
 }
 }

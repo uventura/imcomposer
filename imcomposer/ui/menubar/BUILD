@@ -1,7 +1,7 @@
 cc_library(
-    name = "toolbar",
-    srcs = ["toolbar.cpp"],
-    hdrs = ["toolbar.h"],
+    name = "menubar",
+    srcs = ["menubar.cpp"],
+    hdrs = ["menubar.h"],
     deps = [
         "//imcomposer/core/imgui",
         "//imcomposer/core/fonts",

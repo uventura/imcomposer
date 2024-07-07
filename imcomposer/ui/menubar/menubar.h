@@ -4,10 +4,10 @@ namespace ImComposer
 {
 namespace UI
 {
-    class Toolbar
+    class Menubar
     {
         public:
-            Toolbar();
+            Menubar();
             void begin();
             void setIconFont(ImFont* font);
         private:

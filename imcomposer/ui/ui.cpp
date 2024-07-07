@@ -5,7 +5,7 @@
 ImComposer::UI::MainUi::MainUi() {}
 
 void ImComposer::UI::MainUi::draw() {
-    toolbar_.begin();
+    menubar_.begin();
 
     // ImGui::ShowDemoWindow(&show_demo_window);
 
