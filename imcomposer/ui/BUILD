@@ -5,6 +5,7 @@ cc_library(
     deps = [
         "//imcomposer/ui/menubar",
         "//imcomposer/ui/toolbar",
+        "//imcomposer/ui/canvas",
     ],
     visibility = ["//imcomposer:__subpackages__"],
 )
