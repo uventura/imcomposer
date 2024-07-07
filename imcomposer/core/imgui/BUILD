@@ -4,7 +4,7 @@ cc_library(
         "imgui.cpp",
     ],
     hdrs = [
-        "imgui.hpp",
+        "imgui.h",
     ],
     deps = [
         "//third_party/imgui",
@@ -18,7 +18,7 @@ cc_library(
 cc_library(
     name = "docking",
     srcs = ["docking.cpp"],
-    hdrs = ["docking.hpp"],
+    hdrs = ["docking.h"],
     deps = [":imgui"],
     visibility = ["//imcomposer:__subpackages__"],
 )

@@ -4,7 +4,7 @@ cc_library(
         "window.cpp",
     ],
     hdrs = [
-        "window.hpp",
+        "window.h",
     ],
     deps = [
         "//third_party/glad",

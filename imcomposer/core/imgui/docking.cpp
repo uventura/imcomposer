@@ -1,6 +1,6 @@
 
-#include "imcomposer/core/imgui/imgui.hpp"
-#include "imcomposer/core/imgui/docking.hpp"
+#include "imcomposer/core/imgui/imgui.h"
+#include "imcomposer/core/imgui/docking.h"
 
 #include <iostream>
 

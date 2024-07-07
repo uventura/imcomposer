@@ -13,7 +13,7 @@ cc_library(
         "imcomposer.cpp",
     ],
     hdrs = [
-        "imcomposer.hpp",
+        "imcomposer.h",
     ],
     deps = [
         "//imcomposer/core/window",

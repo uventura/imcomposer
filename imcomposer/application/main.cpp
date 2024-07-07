@@ -1,4 +1,4 @@
-#include "imcomposer/application/imcomposer.hpp"
+#include "imcomposer/application/imcomposer.h"
 #include "imcomposer/application/imcomposer_environment.h"
 
 #include <iostream>

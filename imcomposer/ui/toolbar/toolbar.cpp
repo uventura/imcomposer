@@ -1,4 +1,4 @@
-#include "imcomposer/core/imgui/imgui.hpp"
+#include "imcomposer/core/imgui/imgui.h"
 #include "imcomposer/ui/toolbar/toolbar.h"
 
 #include "imcomposer/core/fonts/fonts.h"

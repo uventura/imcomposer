@@ -1,4 +1,4 @@
-#include "imcomposer/core/imgui/imgui.hpp"
+#include "imcomposer/core/imgui/imgui.h"
 
 #include <glad/gl.h>
 #include <GLFW/glfw3.h>
