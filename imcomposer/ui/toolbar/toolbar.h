@@ -1,9 +1,8 @@
-#ifndef IMCOMPOSER_UI_TOOLBAR
-#define IMCOMPOSER_UI_TOOLBAR
+#include "imcomposer/core/imgui/imgui.h"
 
 namespace ImComposer
 {
-namespace Component
+namespace UI
 {
     class Toolbar
     {
@@ -17,5 +16,3 @@ namespace Component
     };
 }
 }
-
-#endif

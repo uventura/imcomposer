@@ -5,17 +5,17 @@
 
 #include <iostream>
 
-ImComposer::Component::Toolbar::Toolbar()
+ImComposer::UI::Toolbar::Toolbar()
 {
     state_ = true;
 }
 
-void ImComposer::Component::Toolbar::setIconFont(ImFont* font)
+void ImComposer::UI::Toolbar::setIconFont(ImFont* font)
 {
     iconFont_ = font;
 }
 
-void ImComposer::Component::Toolbar::begin()
+void ImComposer::UI::Toolbar::begin()
 {
     if (ImGui::BeginMenuBar())
     {

@@ -4,7 +4,7 @@
 #include "imcomposer/core/window/window.h"
 #include "imcomposer/core/imgui/imgui.h"
 
-#include "imcomposer/ui/toolbar/toolbar.h"
+#include "imcomposer/ui/ui.h"
 
 #include <string>
 
@@ -16,7 +16,7 @@ namespace ImComposer
             ImComposer::Core::Window window_;
             ImComposer::Core::Imgui* imgui_;
 
-            ImComposer::Component::Toolbar toolbar_;
+            ImComposer::UI::MainUi ui_;
 
         public:
             void render();
