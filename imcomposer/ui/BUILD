@@ -4,6 +4,7 @@ cc_library(
     hdrs = ["ui.h"],
     deps = [
         "//imcomposer/ui/menubar",
+        "//imcomposer/ui/toolbar",
     ],
     visibility = ["//imcomposer:__subpackages__"],
 )

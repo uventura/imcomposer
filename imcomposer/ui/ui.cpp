@@ -7,6 +7,7 @@ ImComposer::UI::MainUi::MainUi() {}
 void ImComposer::UI::MainUi::draw() {
     menubar_.begin();
 
+    toolbar_.draw();
     // ImGui::ShowDemoWindow(&show_demo_window);
 
     ImGui::PushFont(ImComposer::Core::FontLoader::fonts[IMCOMPOSER_ICON_FONT_1]);
