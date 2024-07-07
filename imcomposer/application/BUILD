@@ -18,7 +18,7 @@ cc_library(
     deps = [
         "//imcomposer/core/window",
         "//imcomposer/core/imgui",
-        "//imcomposer/components/docking",
+        "//imcomposer/core/imgui:docking",
         ":environment",
         "//imcomposer/ui",
     ]

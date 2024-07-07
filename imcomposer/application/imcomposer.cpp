@@ -1,6 +1,6 @@
 #include "imcomposer/application/imcomposer.hpp"
 #include "imcomposer/core/imgui/imgui.hpp"
-#include "imcomposer/components/docking/docking.hpp"
+#include "imcomposer/core/imgui/docking.hpp"
 
 #include "data/fonts/fonts.h"
 
