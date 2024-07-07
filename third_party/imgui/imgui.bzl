@@ -5,6 +5,6 @@ def imgui():
         name = "imgui",
         remote = "https://github.com/ocornut/imgui",
         # branch = "docking",
-        commit = "2dc85e6e438e6d7f485317c9b76dc153535fed16",
+        commit = "1db579d458da29fa43376af9d88d486910d9406a",
         build_file = "@//third_party/imgui:imgui.BUILD",
     )

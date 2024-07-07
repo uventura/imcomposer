@@ -4,6 +4,7 @@ cc_library(
         "src/gl.c",
     ],
     hdrs = [
+        "include/GL/gl.h",
         "include/glad/gl.h",
         "include/KHR/khrplatform.h"
     ],
@@ -13,22 +14,22 @@ cc_library(
         "//conditions:default": [],
         "@bazel_tools//src/conditions:windows": [],
         "@bazel_tools//src/conditions:linux": [
-            # "-ldl",
+            "-ldl",
             # "-lpthread",
-            "-fpic",
-            "-fPIC",
-            "-m64"
+            # "-fpic",
+            # "-fPIC",
+            # "-m64",
         ],
     }),
     copts = select({
         "//conditions:default": [],
         "@bazel_tools//src/conditions:windows": [],
         "@bazel_tools//src/conditions:linux": [
-            # "-ldl",
+            "-ldl",
             # "-lpthread",
-            "-fpic",
-            "-fPIC",
-            "-m64"
+            # "-fpic",
+            # "-fPIC",
+            # "-m64"
         ],
     }),
 )
