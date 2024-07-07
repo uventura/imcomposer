@@ -1,6 +1,6 @@
 #include "imcomposer/application/imcomposer_environment.h"
 #include "imcomposer/utils/bazel.h"
-#include "imcomposer/core/fonts/font_data.h"
+#include "imcomposer/core/fonts/available_fonts.h"
 #include "imcomposer/core/fonts/font_loader.h"
 
 #include "imgui.h"

@@ -1,6 +1,6 @@
 cc_library(
     name = "font_data",
-    srcs = ["font_data.h"],
+    srcs = ["available_fonts.h"],
     deps = ["//data/fonts"],
     visibility = ["//imcomposer:__subpackages__"],
 )
