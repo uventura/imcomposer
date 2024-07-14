@@ -33,3 +33,5 @@
 
 bazel-*
 .vscode
+
+imcomposer_test
