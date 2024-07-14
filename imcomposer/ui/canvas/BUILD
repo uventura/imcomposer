@@ -6,6 +6,7 @@ cc_library(
         "//imcomposer/core/imgui",
         "//imcomposer/core/fonts",
         "//imcomposer/core/fonts:font_loader",
+        "//imcomposer/core/parser:json_widget_reader",
     ],
     visibility = ["//imcomposer:__subpackages__"],
 )

@@ -1,0 +1,13 @@
+{
+	"title": "my_widget",
+	"widgets": [
+		{
+			"type": "button",
+			"width": 300,
+			"height": 400,
+			"text": "A button"
+		}
+	],
+    "width": 550,
+    "height": 300
+}
