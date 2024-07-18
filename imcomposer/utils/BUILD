@@ -11,3 +11,10 @@ cc_library(
     ],
     visibility = ["//imcomposer:__subpackages__",],
 )
+
+
+cc_library(
+    name = "thread",
+    hdrs = ["thread.h"],
+    visibility = ["//imcomposer:__subpackages__"],
+)
