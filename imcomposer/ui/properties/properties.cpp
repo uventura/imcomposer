@@ -3,7 +3,9 @@
 
 ImComposer::UI::Properties::Properties() {}
 
-void ImComposer::UI::Properties::draw() {
+ImComposer::Event ImComposer::UI::Properties::draw() {
+    ImComposer::Event event;
+
     ImGui::Begin("Properties");
         static bool show_demo_window = true;
         ImGui::ShowDemoWindow(&show_demo_window);
@@ -17,4 +19,6 @@ void ImComposer::UI::Properties::draw() {
 
         ImGui::PopFont();
     ImGui::End();
+
+    return event;
 }

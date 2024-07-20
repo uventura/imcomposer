@@ -7,6 +7,7 @@ cc_library(
         "//imcomposer/ui/toolbar",
         "//imcomposer/ui/canvas",
         "//imcomposer/ui/properties",
+        "//imcomposer/events",
     ],
     visibility = ["//imcomposer:__subpackages__"],
 )

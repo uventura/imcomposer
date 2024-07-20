@@ -7,6 +7,7 @@ cc_library(
         "//imcomposer/core/fonts",
         "//imcomposer/core/fonts:font_loader",
         "//imcomposer/core/file_dialog",
+        "//imcomposer/events",
     ],
     visibility = ["//imcomposer:__subpackages__"],
 )

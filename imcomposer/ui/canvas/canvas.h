@@ -7,10 +7,11 @@ namespace UI
     class Canvas
     {
         public:
-            Canvas();
+            Canvas(const std::string& widgetPath);
             void draw();
         private:
             bool state_;
+            std::string widgetPath_;
     };
 }
 }

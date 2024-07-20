@@ -5,9 +5,9 @@
 			"type": "button",
 			"width": 300,
 			"height": 400,
-			"text": "A button"
+			"text": "Hello, World!"
 		}
 	],
-    "width": 550,
-    "height": 300
+    "width": 360,
+    "height": 200
 }

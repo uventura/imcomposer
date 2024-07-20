@@ -6,7 +6,7 @@
 
 ImComposer::Core::Parser::JsonWidgetReader::JsonWidgetReader(const std::string& location) {
     // An absolute path must be provided here, but this will be fixed.
-    std::ifstream file("data/widget/json_examples/widget_button.json");
+    std::ifstream file(location);
     widgetParsed_ = json::parse(file);
     title_ = widgetParsed_["title"];
     width_ = widgetParsed_["width"];
