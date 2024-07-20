@@ -10,16 +10,9 @@ ImComposer::UI::MainUi::MainUi() {}
 void ImComposer::UI::MainUi::draw() {
     menubar_.begin();
 
-    static ImComposer::Event event;
-
-    event = toolbar_.draw();
-    eventChecker(event);
-
-    for(int i = 0; i < openedCanvas_.size(); ++i) {
-        openedCanvas_[i].get()->draw();
-    }
-
-    event = properties_.draw();
+    eventChecker(toolbar_.draw());
+    eventChecker(properties_.draw());
+    drawCanvas();
 
     eventAction();
 }
@@ -46,5 +39,11 @@ void ImComposer::UI::MainUi::eventAction() {
 void ImComposer::UI::MainUi::fileEvent(ImComposer::EventActionValue eventAction) {
     if(eventAction == ImComposer::EventAction::File::Open) {
         file_.openFile();
+    }
+}
+
+void ImComposer::UI::MainUi::drawCanvas() {
+    for(int i = 0; i < openedCanvas_.size(); ++i) {
+        openedCanvas_[i].get()->draw();
     }
 }
