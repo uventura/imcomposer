@@ -6,6 +6,10 @@
 			"width": 300,
 			"height": 400,
 			"text": "Hello, World!"
+		},
+		{
+			"type": "text",
+			"text": "This is a simple text. Now, I'm trying to change its content in runtime"
 		}
 	],
     "width": 360,

@@ -5,7 +5,6 @@
 #include <fstream>
 
 ImComposer::Core::Parser::JsonWidgetReader::JsonWidgetReader(const std::string& location) {
-    // An absolute path must be provided here, but this will be fixed.
     std::ifstream file(location);
     widgetParsed_ = json::parse(file);
     title_ = widgetParsed_["title"];
@@ -25,6 +24,10 @@ void ImComposer::Core::Parser::JsonWidgetReader::beginElement(const json& elemen
     if(element["type"] == "button") {
         std::string text = element["text"]; 
         ImGui::Button(text.c_str());
+    }
+    else if(element["type"] == "text") {
+        std::string text = element["text"];
+        ImGui::Text("%s", text.c_str());
     }
 }
 
