@@ -31,7 +31,10 @@ void ImComposer::UI::MainUi::eventChecker(ImComposer::Event event) {
 
 void ImComposer::UI::MainUi::eventAction() {
     if(file_.isReady()) {
-        openedCanvas_.push_back(std::make_unique<Canvas>(file_.getValue()));
+        openedCanvas_.push_back(std::make_unique<Canvas>(
+            file_.getValue(), openedCanvas_.size()
+        ));
+        ++canvasIndex_;
         file_.reset();
     }
 }

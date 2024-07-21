@@ -1,0 +1,17 @@
+{
+	"title": "my_widget_two",
+	"widgets": [
+		{
+			"type": "button",
+			"width": 300,
+			"height": 100,
+			"text": "Hello, Life!"
+		},
+		{
+			"type": "text",
+			"text": "Something"
+		}
+	],
+    "width": 360,
+    "height": 200
+}
