@@ -18,8 +18,14 @@ namespace ImComposer {
                     inline const unsigned int width();
                     inline const unsigned int height();
 
+                    inline bool selectedItemExists();
+                    json currentSelectedItem();
+
                 private:
                     json widgetParsed_;
+                    json selectedItem_;
+                    bool selectedItemExists_{false};
+
                     std::string title_;
                     unsigned int width_, height_;
 

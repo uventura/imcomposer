@@ -37,7 +37,7 @@ namespace UI
         
         private:
             Core::FileDialog file_;
-            int canvasIndex_{-1};
+            int currentCanvas_{-1};
     };
 }
 }

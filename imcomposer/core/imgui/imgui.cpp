@@ -14,7 +14,7 @@ ImComposer::Core::Imgui::Imgui(GLFWwindow* window)
 
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
-    ImGui::CreateContext();
+    context_ = ImGui::CreateContext();
 
     io = &ImGui::GetIO(); (void)io;
     io->ConfigFlags |= ImGuiConfigFlags_NavEnableKeyboard;       // Enable Keyboard Controls

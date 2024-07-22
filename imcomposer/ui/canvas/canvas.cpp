@@ -33,6 +33,6 @@ void ImComposer::UI::Canvas::draw() {
     ImGui::PopStyleColor();
 }
 
-const ImComposer::Core::Parser::JsonWidgetReader ImComposer::UI::Canvas::data() {
-    return *widgetInstance_.get();
+ImComposer::Core::Parser::JsonWidgetReader* ImComposer::UI::Canvas::data() {
+    return widgetInstance_.get();
 }

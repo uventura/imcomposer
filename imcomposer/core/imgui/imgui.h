@@ -8,6 +8,7 @@
 #include <GLFW/glfw3.h>
 
 #include "imgui.h"
+#include "imgui_internal.h"
 #include "backends/imgui_impl_glfw.h"
 #include "backends/imgui_impl_opengl3.h"
 
@@ -22,6 +23,7 @@ namespace Core
         private:
             GLFWwindow* window_;
             ImGuiIO* io;
+            ImGuiContext* context_;
             ImComposer::Core::FontLoader font_;
 
         public:
@@ -31,6 +33,7 @@ namespace Core
             void newFrame();
             void render();
             void update();
+            inline const ImGuiContext* getContext() {return context_;};
     };
 }
 }

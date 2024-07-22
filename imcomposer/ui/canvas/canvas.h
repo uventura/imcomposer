@@ -12,7 +12,7 @@ namespace UI
         public:
             Canvas(const std::string& widgetPath, const int id);
             void draw();
-            const Core::Parser::JsonWidgetReader data();
+            Core::Parser::JsonWidgetReader* data();
             inline int id(){return id_;};
         private:
             bool state_;

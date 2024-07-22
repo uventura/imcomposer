@@ -11,8 +11,16 @@ void ImComposer::UI::MainUi::draw() {
     menubar_.begin();
 
     eventChecker(toolbar_.draw());
-    eventChecker(properties_.draw());
     drawCanvas();
+    eventChecker(properties_.draw());
+
+    ImGui::Begin("Debug Window");
+        ImGuiContext& g = *GImGui;
+        ImGui::Text("%d", ImGui::GetHoveredID());
+    ImGui::End();
+
+    static bool open = true;
+    ImGui::ShowDemoWindow(&open);
 
     eventAction();
 }
@@ -31,10 +39,11 @@ void ImComposer::UI::MainUi::eventChecker(ImComposer::Event event) {
 
 void ImComposer::UI::MainUi::eventAction() {
     if(file_.isReady()) {
+        auto newId = openedCanvas_.size() + 1;
         openedCanvas_.push_back(std::make_unique<Canvas>(
-            file_.getValue(), openedCanvas_.size()
+            file_.getValue(), newId
         ));
-        ++canvasIndex_;
+        currentCanvas_ = newId;
         file_.reset();
     }
 }
@@ -47,6 +56,12 @@ void ImComposer::UI::MainUi::fileEvent(ImComposer::EventActionValue eventAction)
 
 void ImComposer::UI::MainUi::drawCanvas() {
     for(int i = 0; i < openedCanvas_.size(); ++i) {
-        openedCanvas_[i].get()->draw();
+        auto element = openedCanvas_[i].get();
+
+        if(currentCanvas_ == element->id()) {
+            properties_.setWidgetData(element->data());
+        }
+
+        element->draw();
     }
 }

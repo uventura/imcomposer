@@ -2,12 +2,14 @@
 	"title": "my_widget",
 	"widgets": [
 		{
+			"id": "hello_button",
 			"type": "button",
 			"width": 300,
 			"height": 400,
 			"text": "Hello, World!"
 		},
 		{
+			"id": "sample_text",
 			"type": "text",
 			"text": "This is a simple text. Now, I'm trying to change its content in runtime"
 		}

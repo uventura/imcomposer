@@ -7,18 +7,18 @@ ImComposer::Event ImComposer::UI::Properties::draw() {
     ImComposer::Event event;
 
     ImGui::Begin("Properties");
-        static bool show_demo_window = true;
-        ImGui::ShowDemoWindow(&show_demo_window);
-
-        ImGui::PushFont(ImComposer::Core::FontLoader::fonts[IMCOMPOSER_ICON_FONT_1]);
-            ImGui::Text(ICON_CI_TOOLS);
-
-        ImGui::Begin("Something");
-        ImGui::Button(ICON_CI_HEART, ImVec2(60, 60));
-        ImGui::End();
-
-        ImGui::PopFont();
+        if(propertyExists_) {
+            ImGui::Text("Title: %s", widgetData_->title().c_str());
+        }
+        else {
+            ImGui::Text("No property available yet...");
+        }
     ImGui::End();
 
     return event;
+}
+
+void ImComposer::UI::Properties::setWidgetData(ImComposer::Core::Parser::JsonWidgetReader* widgetData) {
+    propertyExists_ = true;
+    widgetData_ = widgetData;
 }
