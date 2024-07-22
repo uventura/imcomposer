@@ -10,6 +10,7 @@ ImComposer::Core::Parser::JsonWidgetReader::JsonWidgetReader(const std::string& 
     title_ = widgetParsed_["title"];
     width_ = widgetParsed_["width"];
     height_ = widgetParsed_["height"];
+    file.close();
 }
 
 void ImComposer::Core::Parser::JsonWidgetReader::draw() {
