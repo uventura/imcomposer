@@ -21,7 +21,7 @@ bazel build --config=imcomposer-windows imcomposer
 
 * Linux:
 ```
-bazel build --config=imcomposer-windows imcomposer
+bazel build --config=imcomposer-linux imcomposer
 ```
 
 ### Run
@@ -32,5 +32,5 @@ bazel run --config=imcomposer-windows imcomposer
 
 * Linux:
 ```
-bazel run --config=imcomposer-windows imcomposer
+bazel run --config=imcomposer-linux imcomposer
 ```
