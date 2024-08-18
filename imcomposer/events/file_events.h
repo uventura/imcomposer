@@ -2,9 +2,9 @@
 
 namespace ImComposer {
 namespace EventAction {
-    enum File {
-        Open,
-        Close,
-    };
+enum File {
+  Open,
+  Close,
+};
 }
-}
+}  // namespace ImComposer

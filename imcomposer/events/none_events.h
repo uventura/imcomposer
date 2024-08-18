@@ -2,6 +2,6 @@
 
 namespace ImComposer {
 namespace EventAction {
-    enum None {None};
-} 
+enum None { None };
 }
+}  // namespace ImComposer

@@ -1,26 +1,23 @@
-#include "imcomposer/core/imgui/imgui.h"
-#include "imcomposer/events/events.h"
-#include "imcomposer/core/parser/json_widget_reader.h"
-
 #include <nlohmann/json.hpp>
 
-namespace ImComposer
-{
-namespace UI
-{
-    using json = nlohmann::json;
+#include "imcomposer/core/imgui/imgui.h"
+#include "imcomposer/core/parser/json_widget_reader.h"
+#include "imcomposer/events/events.h"
 
-    class Properties
-    {
-        public:
-            Properties();
-            ImComposer::Event draw();
+namespace ImComposer {
+namespace UI {
+using json = nlohmann::json;
 
-            void setJsonElement(json& widgetElement);
+class Properties {
+ public:
+  Properties();
+  ImComposer::Event draw();
 
-        private:
-            bool propertyExists_{false};
-            json* widgetElement_{nullptr};
-    };
-}
-}
+  void setJsonElement(json& widgetElement);
+
+ private:
+  bool propertyExists_{false};
+  json* widgetElement_{nullptr};
+};
+}  // namespace UI
+}  // namespace ImComposer

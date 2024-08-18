@@ -1,43 +1,40 @@
 #pragma once
 
-#include "imcomposer/ui/menubar/menubar.h"
-#include "imcomposer/ui/toolbar/toolbar.h"
-#include "imcomposer/ui/canvas/canvas.h"
-#include "imcomposer/ui/properties/properties.h"
-#include "imcomposer/core/file_dialog/file_dialog.h"
-#include "imcomposer/events/events.h"
-
 #include <memory>
 #include <vector>
 
-namespace ImComposer
-{
-namespace UI
-{
-    class MainUi
-    {
-        public:
-            MainUi();
-            void draw();
+#include "imcomposer/core/file_dialog/file_dialog.h"
+#include "imcomposer/events/events.h"
+#include "imcomposer/ui/canvas/canvas.h"
+#include "imcomposer/ui/menubar/menubar.h"
+#include "imcomposer/ui/properties/properties.h"
+#include "imcomposer/ui/toolbar/toolbar.h"
 
-        private:
-            bool state_;
-            Menubar menubar_;
-            Toolbar toolbar_;
-            Properties properties_;
+namespace ImComposer {
+namespace UI {
+class MainUi {
+ public:
+  MainUi();
+  void draw();
 
-            std::vector<Canvas> openedCanvas_;
+ private:
+  bool state_;
+  Menubar menubar_;
+  Toolbar toolbar_;
+  Properties properties_;
 
-        private:
-            void eventChecker(ImComposer::Event event);
-            void eventAction();
-            void drawCanvas();
+  std::vector<Canvas> openedCanvas_;
 
-            void fileEvent(ImComposer::EventActionValue eventAction);
-        
-        private:
-            Core::FileDialog file_;
-            int currentCanvas_{-1};
-    };
-}
-}
+ private:
+  void eventChecker(ImComposer::Event event);
+  void eventAction();
+  void drawCanvas();
+
+  void fileEvent(ImComposer::EventActionValue eventAction);
+
+ private:
+  Core::FileDialog file_;
+  int currentCanvas_{-1};
+};
+}  // namespace UI
+}  // namespace ImComposer

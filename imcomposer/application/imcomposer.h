@@ -1,30 +1,27 @@
 #ifndef IMCOMPOSER_UI
 #define IMCOMPOSER_UI
 
-#include "imcomposer/core/window/window.h"
-#include "imcomposer/core/imgui/imgui.h"
-
-#include "imcomposer/ui/ui.h"
-
 #include <string>
 
-namespace ImComposer
-{
-    class ImComposerUi
-    {
-        private:
-            ImComposer::Core::Window window_;
-            ImComposer::Core::Imgui* imgui_;
+#include "imcomposer/core/imgui/imgui.h"
+#include "imcomposer/core/window/window.h"
+#include "imcomposer/ui/ui.h"
 
-            ImComposer::UI::MainUi ui_;
+namespace ImComposer {
+class ImComposerUi {
+ private:
+  ImComposer::Core::Window window_;
+  ImComposer::Core::Imgui* imgui_;
 
-        public:
-            void render();
+  ImComposer::UI::MainUi ui_;
 
-        private:
-            void clear();
-            void update();
-    };
-}
+ public:
+  void render();
+
+ private:
+  void clear();
+  void update();
+};
+}  // namespace ImComposer
 
 #endif

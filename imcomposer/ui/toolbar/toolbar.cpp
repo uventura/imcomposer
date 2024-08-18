@@ -2,22 +2,26 @@
 
 #include <iostream>
 
-ImComposer::UI::Toolbar::Toolbar() {}
+namespace ImComposer {
+namespace UI {
+Toolbar::Toolbar() {}
 
-ImComposer::Event ImComposer::UI::Toolbar::draw() {
-    ImComposer::Event event;
+ImComposer::Event Toolbar::draw() {
+  ImComposer::Event event;
 
-    ImGui::Begin("Toolbar");
-        ImGui::Button("New Widget");
+  ImGui::Begin("Toolbar");
+  ImGui::Button("New Widget");
 
-        ImGui::SameLine();
-        if(ImGui::Button("Load widget")) {
-            event = {
-                ImComposer::EventType::FileEvent,
-                ImComposer::EventAction::File::Open,
-            };
-        }
-    ImGui::End();
+  ImGui::SameLine();
+  if (ImGui::Button("Load widget")) {
+    event = {
+        ImComposer::EventType::FileEvent,
+        ImComposer::EventAction::File::Open,
+    };
+  }
+  ImGui::End();
 
-    return event;
+  return event;
 }
+}  // namespace UI
+}  // namespace ImComposer
