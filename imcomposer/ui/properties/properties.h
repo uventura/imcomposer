@@ -18,6 +18,10 @@ class Properties {
  private:
   bool propertyExists_{false};
   json* widgetElement_{nullptr};
+
+  void drawWidgetProperty();
+  void drawRootWidgetProperties(json* widget);
+  void drawButtonProperties(json* widget);
 };
 }  // namespace UI
 }  // namespace ImComposer

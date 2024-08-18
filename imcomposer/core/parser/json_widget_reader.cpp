@@ -38,6 +38,14 @@ void ImComposer::Core::Parser::JsonWidgetReader::beginElement(
     ImGui::Text("%s", text.c_str());
   }
 
+  if(ImGui::IsItemClicked()
+  && selectedItemExists_
+  && selectedItem_["id"] == element["id"])
+  {
+    restoreSelectedItemToRoot();
+    return;
+  }
+
   if (ImGui::IsItemClicked() ||
       (selectedItemExists_ && selectedItem_["id"] == element["id"])) {
     selectedItem_ = element;

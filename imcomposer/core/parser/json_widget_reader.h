@@ -28,6 +28,8 @@ class JsonWidgetReader {
 
   void beginElement(const json& element);
   void endElement(const json& element);
+
+  void restoreSelectedItemToRoot() {selectedItem_ = widgetParsed_;};
 };
 }  // namespace Parser
 }  // namespace Core
