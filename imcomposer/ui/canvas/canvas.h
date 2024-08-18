@@ -3,6 +3,9 @@
 
 #include <memory>
 
+#include <nlohmann/json.hpp>
+using json = nlohmann::json;
+
 namespace ImComposer
 {
 namespace UI
@@ -13,7 +16,10 @@ namespace UI
             Canvas(const std::string& widgetPath, const int id);
             void draw();
             Core::Parser::JsonWidgetReader* data();
+
             inline int id(){return id_;};
+            inline json& widget(){return widgetInstance_->widget();};
+
         private:
             bool state_;
             int id_{0};

@@ -40,7 +40,7 @@ void ImComposer::UI::MainUi::eventChecker(ImComposer::Event event) {
 void ImComposer::UI::MainUi::eventAction() {
     if(file_.isReady()) {
         auto newId = openedCanvas_.size() + 1;
-        openedCanvas_.push_back(std::make_unique<Canvas>(
+        openedCanvas_.push_back(Canvas(
             file_.getValue(), newId
         ));
         currentCanvas_ = newId;
@@ -56,12 +56,10 @@ void ImComposer::UI::MainUi::fileEvent(ImComposer::EventActionValue eventAction)
 
 void ImComposer::UI::MainUi::drawCanvas() {
     for(int i = 0; i < openedCanvas_.size(); ++i) {
-        auto element = openedCanvas_[i].get();
-
-        if(currentCanvas_ == element->id()) {
-            properties_.setWidgetData(element->data());
+        if(currentCanvas_ == openedCanvas_[i].id()) {
+            properties_.setWidgetData(openedCanvas_[i].data());
         }
 
-        element->draw();
+        openedCanvas_[i].draw();
     }
 }

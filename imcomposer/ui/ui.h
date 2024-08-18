@@ -26,7 +26,7 @@ namespace UI
             Toolbar toolbar_;
             Properties properties_;
 
-            std::vector<std::unique_ptr<Canvas>> openedCanvas_;
+            std::vector<Canvas> openedCanvas_;
 
         private:
             void eventChecker(ImComposer::Event event);

@@ -18,8 +18,7 @@ namespace ImComposer {
                     inline const unsigned int width();
                     inline const unsigned int height();
 
-                    inline bool selectedItemExists();
-                    json currentSelectedItem();
+                    inline json& widget() {return selectedItem_;} 
 
                 private:
                     json widgetParsed_;
