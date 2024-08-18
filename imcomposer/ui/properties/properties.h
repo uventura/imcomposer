@@ -2,22 +2,25 @@
 #include "imcomposer/events/events.h"
 #include "imcomposer/core/parser/json_widget_reader.h"
 
+#include <nlohmann/json.hpp>
+
 namespace ImComposer
 {
 namespace UI
 {
+    using json = nlohmann::json;
+
     class Properties
     {
         public:
             Properties();
             ImComposer::Event draw();
 
-            // The pointer usage is bad, probably should be replaced by a shared pointer.
-            // Or somthing better.
-            void setWidgetData(ImComposer::Core::Parser::JsonWidgetReader* widgetData);
+            void setJsonElement(json widgetElement);
+
         private:
             bool propertyExists_{false};
-            ImComposer::Core::Parser::JsonWidgetReader* widgetData_;
+            json widgetElement_;
     };
 }
 }

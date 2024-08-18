@@ -7,7 +7,7 @@
 ImComposer::Core::Parser::JsonWidgetReader::JsonWidgetReader(const std::string& location) {
     std::ifstream file(location);
     widgetParsed_ = json::parse(file);
-    title_ = widgetParsed_["title"];
+    title_ = widgetParsed_["id"];
     width_ = widgetParsed_["width"];
     height_ = widgetParsed_["height"];
 

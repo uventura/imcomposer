@@ -57,7 +57,7 @@ void ImComposer::UI::MainUi::fileEvent(ImComposer::EventActionValue eventAction)
 void ImComposer::UI::MainUi::drawCanvas() {
     for(int i = 0; i < openedCanvas_.size(); ++i) {
         if(currentCanvas_ == openedCanvas_[i].id()) {
-            properties_.setWidgetData(openedCanvas_[i].data());
+            properties_.setJsonElement(openedCanvas_[i].widget());
         }
 
         openedCanvas_[i].draw();

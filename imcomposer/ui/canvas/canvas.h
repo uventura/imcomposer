@@ -15,7 +15,6 @@ namespace UI
         public:
             Canvas(const std::string& widgetPath, const int id);
             void draw();
-            Core::Parser::JsonWidgetReader* data();
 
             inline int id(){return id_;};
             inline json& widget(){return widgetInstance_->widget();};

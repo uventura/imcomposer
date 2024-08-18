@@ -1,14 +1,21 @@
 #include "imcomposer/ui/properties/properties.h"
 #include "imcomposer/core/fonts/fonts.h"
 
-ImComposer::UI::Properties::Properties() {}
+#include <string>
 
-ImComposer::Event ImComposer::UI::Properties::draw() {
+namespace ImComposer
+{
+namespace UI
+{
+Properties::Properties() {}
+
+Event Properties::draw() {
     ImComposer::Event event;
 
     ImGui::Begin("Properties");
         if(propertyExists_) {
-            ImGui::Text("Title: %s", widgetData_->title().c_str());
+            std::string title = widgetElement_["id"];
+            ImGui::Text("Title: %s", title.c_str());
         }
         else {
             ImGui::Text("No property available yet...");
@@ -18,7 +25,9 @@ ImComposer::Event ImComposer::UI::Properties::draw() {
     return event;
 }
 
-void ImComposer::UI::Properties::setWidgetData(ImComposer::Core::Parser::JsonWidgetReader* widgetData) {
+void Properties::setJsonElement(json widgetElement) {
     propertyExists_ = true;
-    widgetData_ = widgetData;
+    widgetElement_ = widgetElement;
+}
+}
 }

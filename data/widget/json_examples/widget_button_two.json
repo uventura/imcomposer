@@ -1,5 +1,6 @@
 {
-	"title": "my_widget_two",
+	"id": "my_widget_two",
+	"type": "widget",
 	"widgets": [
 		{
 			"type": "button",
