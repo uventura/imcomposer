@@ -14,8 +14,19 @@ Event Properties::draw() {
 
     ImGui::Begin("Properties");
         if(propertyExists_) {
-            std::string title = widgetElement_["id"];
+            json element = *widgetElement_;
+            std::string title = element["id"];
+
             ImGui::Text("Title: %s", title.c_str());
+            if(element["type"] == "widget")
+            {
+                for(long long i = 0; i < element["widgets"].size(); ++i)
+                {
+                    json item = element["widgets"][i];
+                    std::string id = item["id"];
+                    ImGui::Text("Element: %s", id.c_str());
+                }
+            }
         }
         else {
             ImGui::Text("No property available yet...");
@@ -25,9 +36,9 @@ Event Properties::draw() {
     return event;
 }
 
-void Properties::setJsonElement(json widgetElement) {
+void Properties::setJsonElement(json& widgetElement) {
     propertyExists_ = true;
-    widgetElement_ = widgetElement;
+    widgetElement_ = &widgetElement;
 }
 }
 }

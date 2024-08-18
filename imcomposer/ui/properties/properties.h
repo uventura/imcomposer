@@ -16,11 +16,11 @@ namespace UI
             Properties();
             ImComposer::Event draw();
 
-            void setJsonElement(json widgetElement);
+            void setJsonElement(json& widgetElement);
 
         private:
             bool propertyExists_{false};
-            json widgetElement_;
+            json* widgetElement_{nullptr};
     };
 }
 }
